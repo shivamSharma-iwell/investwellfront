@@ -1,0 +1,455 @@
+$inputBorder : 1px solid #585858;
+$divBorders : 1px solid #ede8ea;
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+
+    body {
+        margin: 0px;
+        padding: 0px;
+
+        .mainBox {
+            height: 100vh;
+            position: relative;
+
+            .logo {
+                height: 8%;
+                width: 12%;
+                border: $divBorders;
+                display: inline-block;
+                position: absolute;
+            }
+
+            .navHeader {
+                display: inline-block;
+                height: 8%;
+                width: 88%;
+                border: $divBorders;
+                position: absolute;
+                margin: auto 0 0 12%;
+            }
+
+            .sideNav {
+                height: 94%;
+            }
+
+            .sideNav,
+            .sideNavWithMatrix {
+                display: inline-block;
+                width: 12%;
+                margin: 3% 0 0 0;
+                border: $divBorders;
+                background-color: #526fe4;
+                position: absolute;
+            }
+
+            .sideNavWithMatrix {
+                height: 200%;
+            }
+
+            .rightMain {
+                height: 94%;
+            }
+
+            .rightMainWithMatrix {
+                height: auto;
+            }
+
+            .rightMain,
+            .rightMainWithMatrix {
+                display: inline-block;
+                width: 88%;
+                margin: 3% 0px 0px 12%;
+                border: $divBorders;
+                background-color: #f0f4fa;
+                position: absolute;
+
+                .contentArea {
+                    height: auto;
+                    width: 95%;
+                    background-color: #ffffff;
+                    margin: 2% auto;
+                    padding: 20px 5px 0 20px;
+
+                    .selectionArea {
+                        display: inline-block;
+                        margin: 0 30px 10px 5px;
+
+                        .labels {
+                            display: block;
+                            margin: 0 0 5px;
+                            font-weight: 600;
+                        }
+
+                        .goButton {
+                            border: $inputBorder;
+                            width: 60px;
+                            height: 38px;
+                            border-radius: 5px;
+                            background-color: #4959e8;
+                            color: #ffffff;
+                            font-weight: bold;
+                            font-size: large;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .schemeList {
+                        display: block;
+
+                        .displayList {
+                            display: inline-block;
+                            position: relative;
+
+                            .listTitle {
+                                color: #2e2b3a;
+                                margin: 32px 0 0 5px;
+                                height: auto;
+                                position: absolute;
+                                width: 10%;
+                            }
+
+                            .listBox {
+                                display: inline-block;
+                                width: auto;
+                                margin: 0 0 0 25px;
+                                padding: 0px 0 8px 50px;
+                                font-weight: 200;
+
+                                .lists {
+                                    display: inline-block;
+                                    margin: 0 0 10px 0;
+
+                                    .date {
+                                        color: #35c0ae;
+                                        text-align: center;
+                                        font-style: italic;
+                                        width: auto;
+                                        margin: 5px 0 4px 10px;
+                                        display: block;
+                                    }
+
+                                    .list {
+                                        color: #585858;
+                                        border: 1px solid #585858;
+                                        width: auto;
+                                        list-style-type: none;
+                                        display: inline-block;
+                                        border-radius: 15px;
+                                        margin: 0 0 0 10px;
+                                        height: auto;
+                                        padding: 5px 3px 4px 7px;
+
+                                        .deleteBtn {
+                                            border-left: $inputBorder;
+                                            float: right;
+                                            width: 20px;
+                                            text-align: center;
+                                            height: 20px;
+                                            margin: -2px 0 0 8px;
+                                            padding: 2px 0 0 0;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .clearButton {
+                                border: $inputBorder;
+                                border-radius: 15px;
+                                width: auto;
+                                color: #ffffff;
+                                background-color: #6e738b;
+                                height: 25px;
+                                display: inline-block;
+                                margin: 0 0 0 10px;
+                                position: inherit;
+                                text-align: center;
+                                padding: 6px 5px 25px;
+                                .clearText{
+                                    padding: 4px;
+                                }
+
+                                .deleteBtn {
+                                    float: right;
+                                    border-left: 1px solid #d1e0eb;
+                                    width: auto;
+                                    height: auto;
+                                    padding: 2px 2px 5px 5px;
+                                    margin: -4px 0 0 5px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    .timePeriodBox {
+                        display: block;
+                        margin: 15px 6px 0;
+
+                        .labels {
+                            font-weight: 600;
+                        }
+
+                        .dropdownContainer {
+                            width: 130px;
+                            margin: 6px 0 0 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: first baseline;
+                            .searchInput{
+                                width: 80px;
+                            }
+                            
+                        }
+                        .dropdownMenu{
+                            width: 120px;
+                        }
+                    }
+
+                    .applyButton {
+                        border: $inputBorder;
+                        width: 80px;
+                        height: 40px;
+                        margin: 2% 45%;
+                        background-color: #4959e8;
+                        color: #fff;
+                        border-radius: 3px;
+                        font-size: large;
+                        cursor: pointer;
+                    }
+
+                    .applyButton:hover {
+                        background-color: #929beb;
+                    }
+                }
+
+                .matrixArea {
+                    height: auto;
+                    width: 95%;
+                    background-color: #ffffff;
+                    margin: 2% auto;
+                    padding: 20px 5px 25px 20px;
+
+                    .correlationMatrix {
+                        width: 86%;
+                        margin: auto;
+                        padding: 20px;
+
+                        .heatMap {
+                            text-align: center;
+                            width: inherit;
+                            margin: auto;
+
+                            .matrixTable {
+                                margin: auto;
+                                width: auto;
+
+                                .xLabel,
+                                .yLabel {
+                                    font-weight: 550;
+                                }
+
+                                .matrixCells {
+                                    width: 90px;
+                                    height: 50px;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    .descriptionTableDiv {
+                        width: 80%;
+                        margin: auto;
+                        align-items: center;
+                        padding: 20px;
+
+                        .descriptionTable {
+                            border-collapse: collapse;
+                            width: auto;
+                            margin: auto;
+
+                            .lowerTableRow {
+                                border: 1px solid rgb(244, 244, 244);
+                                box-shadow: 0px 1px 1px 1px rgb(244, 244, 244);
+                                padding: 5px 1px;
+
+                                .colorGreen {
+                                    background-color: rgb(138, 236, 49);
+                                }
+
+                                .colorSkyBlue {
+                                    background-color: rgb(135, 243, 193);
+                                }
+
+                                .colorOrange {
+                                    background-color: rgb(232, 119, 16);
+                                }
+
+                                .colorRed {
+                                    background-color: rgb(228, 69, 11);
+                                }
+                            }
+
+                            .lowerTableRow td {
+                                padding: 5px 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdownContainer {
+    text-align: left;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 20px;
+    width: 350px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .searchInput:focus{
+        outline: none;
+        border: none;
+    }
+    .searchInput {
+        width: inherit;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        font-size: large;
+    }
+    .close {
+        position: absolute;
+        right: 8px;
+        top: 14px;
+        width: 32px;
+        height: 32px;
+        opacity: 0;
+      }
+      .close:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+      .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 15px;
+        width: 2px;
+        background-color: #333;
+      }
+      .close:before {
+        transform: rotate(45deg);
+      }
+      .close:after {
+        transform: rotate(-45deg);
+      }
+}
+
+    .dropdownMenu {
+        position: absolute;
+        transform: translateY(4px);
+        width: 360px;
+        overflow: auto;
+        max-height: 150px;
+        background-color: #fff;
+        z-index: 9999;
+        border-radius: 10px 5px 5px 10px;
+
+        .dropdownItem {
+            padding: 8px;
+            cursor: pointer;
+            font-size: large;
+        }
+
+        .dropdownItem:hover {
+            background-color: #4959e8;
+            color: #fff;
+        }
+    }
+    
+
+@media (min-width:1000px) {
+    #root {
+        * {
+            font-size: large;
+        }
+        .listTitle {
+            margin: 32px 0 0 5px;
+        }
+
+        .listBox {
+            padding: 0px 0 8px 60px;
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    #root {
+        * {
+            font-size: large;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    #root {
+        * {
+            font-size: medium;
+        }
+
+        .mainBox {
+            padding: 0;
+            margin: 0;
+        }
+
+        .sideNav,
+        .sideNavWithMatrix,
+        .logo {
+            display: none;
+        }
+
+        .rightMain,
+        .rightMainWithMatrix,
+        .navHeader {
+            width: 110vh;
+            position: relative;
+            margin: 0;
+        }
+
+        .listBox {
+            margin: 0 0 0 80px;
+        }
+
+        .lowerTableRow td {
+            padding: 2px;
+        }
+    }
+}
+
+@media (max-height:500px) {
+    #root {
+
+        .logo,
+        .navHeader {
+            height: 5%;
+        }
+
+        .rightMain,
+        .rightMainWithMatrix {
+            height: 100vh;
+        }
+
+        .sideNav,
+        .sideNavWithMatrix {
+            height: 100vh;
+        }
+    }
+}
