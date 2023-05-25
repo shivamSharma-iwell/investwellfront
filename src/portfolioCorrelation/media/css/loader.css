@@ -12,14 +12,16 @@
         width: 12%;
         border: 1px solid #ede8ea;
         display: inline-block;
-        position: absolute; }
+        position: absolute;
+        background-color: #fff; }
       * body .mainBox .navHeader {
         display: inline-block;
         height: 8%;
         width: 88%;
         border: 1px solid #ede8ea;
         position: absolute;
-        margin: auto 0 0 12%; }
+        margin: auto 0 0 12%;
+        background-color: #fff; }
       * body .mainBox .sideNav {
         height: 94%; }
       * body .mainBox .sideNav,
@@ -166,7 +168,7 @@
               justify-content: first baseline; }
               * body .mainBox .rightMain .contentArea .timePeriodBox .dropdownContainer .searchInput,
               * body .mainBox .rightMainWithMatrix .contentArea .timePeriodBox .dropdownContainer .searchInput {
-                width: 80px; }
+                width: 90px; }
             * body .mainBox .rightMain .contentArea .timePeriodBox .dropdownMenu,
             * body .mainBox .rightMainWithMatrix .contentArea .timePeriodBox .dropdownMenu {
               width: 120px; }
@@ -214,7 +216,7 @@
                 * body .mainBox .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap .matrixTable .matrixCells {
                   width: 90px;
                   height: 50px;
-                  font-size: 10px; }
+                  font-size: 20px; }
           * body .mainBox .rightMain .matrixArea .descriptionTableDiv,
           * body .mainBox .rightMainWithMatrix .matrixArea .descriptionTableDiv {
             width: 80%;
@@ -276,7 +278,8 @@
   .dropdownContainer .close:hover {
     opacity: 1;
     cursor: pointer; }
-  .dropdownContainer .close:before, .dropdownContainer .close:after {
+  .dropdownContainer .close:before,
+  .dropdownContainer .close:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -287,6 +290,10 @@
     transform: rotate(45deg); }
   .dropdownContainer .close:after {
     transform: rotate(-45deg); }
+
+.errorMsg {
+  position: absolute;
+  color: red; }
 
 .dropdownMenu {
   position: absolute;
@@ -306,44 +313,53 @@
     color: #fff; }
 
 @media (min-width: 1000px) {
-  #root * {
+  * {
     font-size: large; }
-  #root .listTitle {
+
+  .listTitle {
     margin: 32px 0 0 5px; }
-  #root .listBox {
+
+  .listBox {
     padding: 0px 0 8px 60px; } }
 @media (max-width: 1000px) {
   #root * {
     font-size: large; } }
 @media (max-width: 768px) {
-  #root * {
+  * {
     font-size: medium; }
-  #root .mainBox {
+
+  .mainBox {
     padding: 0;
     margin: 0; }
-  #root .sideNav,
-  #root .sideNavWithMatrix,
-  #root .logo {
+
+  .sideNav,
+  .sideNavWithMatrix,
+  .logo {
     display: none; }
-  #root .rightMain,
-  #root .rightMainWithMatrix,
-  #root .navHeader {
+
+  .rightMain,
+  .rightMainWithMatrix,
+  .navHeader {
     width: 110vh;
     position: relative;
     margin: 0; }
-  #root .listBox {
+
+  .listBox {
     margin: 0 0 0 80px; }
-  #root .lowerTableRow td {
+
+  .lowerTableRow td {
     padding: 2px; } }
 @media (max-height: 500px) {
-  #root .logo,
-  #root .navHeader {
+  .logo,
+  .navHeader {
     height: 5%; }
-  #root .rightMain,
-  #root .rightMainWithMatrix {
+
+  .rightMain,
+  .rightMainWithMatrix {
     height: 100vh; }
-  #root .sideNav,
-  #root .sideNavWithMatrix {
+
+  .sideNav,
+  .sideNavWithMatrix {
     height: 100vh; } }
 
 /*# sourceMappingURL=loader.css.map */
