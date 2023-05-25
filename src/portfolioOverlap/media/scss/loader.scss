@@ -611,8 +611,8 @@ body {
 				width: 87vw;
 				margin: 0 0 0 2vw;
 
-				.dropdownInputOuter {
-					width: 90%;
+				.dropdownInput{
+					width: 100%;
 					height: 6vw;
 				}
 
@@ -852,11 +852,6 @@ body {
 
 				.schemeLabel {
 					font-size: 0.8rem;
-				}
-
-				.dropdownInputOuter {
-					width: 90%;
-					height: 11%;
 				}
 
 				.dropDown {

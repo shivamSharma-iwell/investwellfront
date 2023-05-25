@@ -441,8 +441,8 @@ body {
       .outerContainer .filterArea .searchField {
         width: 87vw;
         margin: 0 0 0 2vw; }
-        .outerContainer .filterArea .searchField .dropdownInputOuter {
-          width: 90%;
+        .outerContainer .filterArea .searchField .dropdownInput {
+          width: 100%;
           height: 6vw; }
         .outerContainer .filterArea .searchField .dropDown {
           width: 87vw;
@@ -592,9 +592,6 @@ body {
         height: 6.5em; }
         .outerContainer .filterArea .searchField .schemeLabel {
           font-size: 0.8rem; }
-        .outerContainer .filterArea .searchField .dropdownInputOuter {
-          width: 90%;
-          height: 11%; }
         .outerContainer .filterArea .searchField .dropDown {
           width: 85vw;
           margin: 8vw 0 0 1vw;
