@@ -15,6 +15,7 @@ export default function Index() {
   const [showMatrix, setShowMatrix] = useState(false)
   const [navData, setNavData] = useState()
   const [showMenu, setShowMenu] = useState('')
+  const [error, setError] = useState({})
 
   const clearData = (field, data) => {
     switch (field) {
@@ -38,13 +39,14 @@ export default function Index() {
   }
   const drillDownData = (obj) => {
     if (obj == '') {
-      alert("Please select scheme!")
+      setError({'noScheme':'Please select scheme!'})
     }
     else if (schemeArr.some(obj => obj.schid == scheme.schid)) {
-      alert("scheme already exist")
+      setError({'schemeAlready':'Scheme already exist'})
       return
     }
     else {
+      setError({})
       axios.get("http://localhost:3000/portfolioCorrelation/getLaunchDate", {
         params: {
           schid: obj.schid
@@ -59,8 +61,7 @@ export default function Index() {
           }
           else {
             if (response.data.result == "Scheme ID doesn't exist") {
-              alert('Invalid Scheme!')
-              setScheme('')
+              setError({'noSchemeId':'Invalid Scheme!'})
             }
             else {
               const newObj = { ...obj, launchDate: response.data && response.data.result, legend: `SC${count}` }
@@ -68,7 +69,6 @@ export default function Index() {
               updatedSchemeArray.push(newObj)
               setSchemeArray(updatedSchemeArray)
               setCount(count + 1)
-              setScheme('')
               setShowMatrix(false)
             }
           }
@@ -79,20 +79,18 @@ export default function Index() {
     }
   }
   const matrixData = () => {
-    if (schemeArr.length <= 1){
-      alert('Please select atleast two schemes')
-      return
+    
+    if (timePeriod == null || (timePeriod && timePeriod.value < 3)) {
+      setError({'timePeriod':'Please select time period!'})
     }
-    else if (timePeriod.value < 2 || timePeriod.value==null){
-      alert('Please select time period!')
-      return
+    else if (schemeArr && schemeArr.length <= 1) {
+      setError({'2Schemes':'Please select atleast two schemes'})
     }
-    else if(schemeArr.length > 15)
-    {
-      alert('Only 15 schemes can be selected!!')
-      return
+    else if (schemeArr.length > 15) {
+      setError({'15schemes':'Only 15 schemes can be selected!!'})
     }
-    else if(timePeriod.value != null){
+    else{
+    setError({})
     let data = []
     schemeArr.map((object) => (
       data.push(object.schid)
@@ -105,14 +103,13 @@ export default function Index() {
     })
       .then((response) => {
         if (response.data.status == -1) {
-          alert(response.data.result)
+          setError(response.data.result)
 
         }
         else {
           setShowMatrix(true)
           let responseData = response.data.result
           setNavData(responseData)
-          setScheme('')
         }
       })
       .catch(error => {
@@ -121,7 +118,7 @@ export default function Index() {
     }
   }
   useEffect(() => {
-    if(category!=null){
+    if (category != null) {
       axios.get("http://localhost:3000/portfolioCorrelation/getSchemes", {
         params: {
           category: category && category.value
@@ -129,13 +126,13 @@ export default function Index() {
       })
         .then((response) => {
           response.data && response.data.status == 0 &&
-            setSchemeOption(response.data.result) 
+            setSchemeOption(response.data.result)
 
         })
         .catch(error => {
           console.log("error", error)
         })
-      }
+    }
   }, [category])
 
   return (
@@ -165,6 +162,7 @@ export default function Index() {
         clearData={clearData}
         showMenu={showMenu}
         setShowMenu={setShowMenu}
+        error={error}
       />
     </div>
 

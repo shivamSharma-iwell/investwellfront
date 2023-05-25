@@ -19,6 +19,7 @@ $divBorders : 1px solid #ede8ea;
                 border: $divBorders;
                 display: inline-block;
                 position: absolute;
+                background-color: #fff;
             }
 
             .navHeader {
@@ -28,6 +29,8 @@ $divBorders : 1px solid #ede8ea;
                 border: $divBorders;
                 position: absolute;
                 margin: auto 0 0 12%;
+                background-color: #fff;
+
             }
 
             .sideNav {
@@ -167,7 +170,8 @@ $divBorders : 1px solid #ede8ea;
                                 position: inherit;
                                 text-align: center;
                                 padding: 6px 5px 25px;
-                                .clearText{
+
+                                .clearText {
                                     padding: 4px;
                                 }
 
@@ -198,12 +202,14 @@ $divBorders : 1px solid #ede8ea;
                             display: flex;
                             align-items: center;
                             justify-content: first baseline;
-                            .searchInput{
-                                width: 80px;
+
+                            .searchInput {
+                                width: 90px;
                             }
-                            
+
                         }
-                        .dropdownMenu{
+
+                        .dropdownMenu {
                             width: 120px;
                         }
                     }
@@ -254,7 +260,7 @@ $divBorders : 1px solid #ede8ea;
                                 .matrixCells {
                                     width: 90px;
                                     height: 50px;
-                                    font-size: 10px;
+                                    font-size: 20px;
                                 }
                             }
                         }
@@ -314,10 +320,12 @@ $divBorders : 1px solid #ede8ea;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .searchInput:focus{
+
+    .searchInput:focus {
         outline: none;
         border: none;
     }
+
     .searchInput {
         width: inherit;
         padding: 5px;
@@ -325,6 +333,7 @@ $divBorders : 1px solid #ede8ea;
         border-radius: 5px;
         font-size: large;
     }
+
     .close {
         position: absolute;
         right: 8px;
@@ -332,62 +341,69 @@ $divBorders : 1px solid #ede8ea;
         width: 32px;
         height: 32px;
         opacity: 0;
-      }
-      .close:hover {
+    }
+
+    .close:hover {
         opacity: 1;
         cursor: pointer;
-      }
-      .close:before, .close:after {
+    }
+
+    .close:before,
+    .close:after {
         position: absolute;
         left: 15px;
         content: ' ';
         height: 15px;
         width: 2px;
         background-color: #333;
-      }
-      .close:before {
+    }
+
+    .close:before {
         transform: rotate(45deg);
-      }
-      .close:after {
+    }
+
+    .close:after {
         transform: rotate(-45deg);
-      }
+    }
+}
+.errorMsg{
+    position: absolute;
+    color: red;
+}
+.dropdownMenu {
+    position: absolute;
+    transform: translateY(4px);
+    width: 360px;
+    overflow: auto;
+    max-height: 150px;
+    background-color: #fff;
+    z-index: 9999;
+    border-radius: 10px 5px 5px 10px;
+
+    .dropdownItem {
+        padding: 8px;
+        cursor: pointer;
+        font-size: large;
+    }
+
+    .dropdownItem:hover {
+        background-color: #4959e8;
+        color: #fff;
+    }
 }
 
-    .dropdownMenu {
-        position: absolute;
-        transform: translateY(4px);
-        width: 360px;
-        overflow: auto;
-        max-height: 150px;
-        background-color: #fff;
-        z-index: 9999;
-        border-radius: 10px 5px 5px 10px;
-
-        .dropdownItem {
-            padding: 8px;
-            cursor: pointer;
-            font-size: large;
-        }
-
-        .dropdownItem:hover {
-            background-color: #4959e8;
-            color: #fff;
-        }
-    }
-    
 
 @media (min-width:1000px) {
-    #root {
-        * {
-            font-size: large;
-        }
-        .listTitle {
-            margin: 32px 0 0 5px;
-        }
+    * {
+        font-size: large;
+    }
 
-        .listBox {
-            padding: 0px 0 8px 60px;
-        }
+    .listTitle {
+        margin: 32px 0 0 5px;
+    }
+
+    .listBox {
+        padding: 0px 0 8px 60px;
     }
 }
 
@@ -400,56 +416,52 @@ $divBorders : 1px solid #ede8ea;
 }
 
 @media (max-width:768px) {
-    #root {
-        * {
-            font-size: medium;
-        }
+    * {
+        font-size: medium;
+    }
 
-        .mainBox {
-            padding: 0;
-            margin: 0;
-        }
+    .mainBox {
+        padding: 0;
+        margin: 0;
+    }
 
-        .sideNav,
-        .sideNavWithMatrix,
-        .logo {
-            display: none;
-        }
+    .sideNav,
+    .sideNavWithMatrix,
+    .logo {
+        display: none;
+    }
 
-        .rightMain,
-        .rightMainWithMatrix,
-        .navHeader {
-            width: 110vh;
-            position: relative;
-            margin: 0;
-        }
+    .rightMain,
+    .rightMainWithMatrix,
+    .navHeader {
+        width: 110vh;
+        position: relative;
+        margin: 0;
+    }
 
-        .listBox {
-            margin: 0 0 0 80px;
-        }
+    .listBox {
+        margin: 0 0 0 80px;
+    }
 
-        .lowerTableRow td {
-            padding: 2px;
-        }
+    .lowerTableRow td {
+        padding: 2px;
     }
 }
 
 @media (max-height:500px) {
-    #root {
 
-        .logo,
-        .navHeader {
-            height: 5%;
-        }
+    .logo,
+    .navHeader {
+        height: 5%;
+    }
 
-        .rightMain,
-        .rightMainWithMatrix {
-            height: 100vh;
-        }
+    .rightMain,
+    .rightMainWithMatrix {
+        height: 100vh;
+    }
 
-        .sideNav,
-        .sideNavWithMatrix {
-            height: 100vh;
-        }
+    .sideNav,
+    .sideNavWithMatrix {
+        height: 100vh;
     }
 }

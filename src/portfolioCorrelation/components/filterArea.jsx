@@ -2,9 +2,6 @@ import React, { useEffect } from 'react'
 import DropDown from './dropDown.jsx'
 
 function FilterArea(props) {
-
-    // console.log("props.setscheme",props.category, "asdf",props.categoryOption, props.setCategory)
-    // console.log("poiuytrew",)
     return (
         <div className='contentArea'>
             <div className='selectionArea'>
@@ -20,7 +17,6 @@ function FilterArea(props) {
                     setShowMenu={props.setShowMenu}
                     showMenu={props.showMenu}
                     setSchemeOption={props.setSchemeOption}
-                    // schemeArr={props.schemeArr}
                 />
             </div>
             <div className='selectionArea'>
@@ -36,8 +32,9 @@ function FilterArea(props) {
                     setShowMenu={props.setShowMenu}
                     showMenu={props.showMenu}
                     setSchemeOption={props.setSchemeOption}
-                    // schemeArr={props.schemeArr}
                 />
+                {props.error && props.error['noScheme'] != undefined && <div className='errorMsg'>{props.error['noScheme']}</div>}
+                {props.error && props.error['schemeAlready'] != undefined && <div className='errorMsg'>{props.error['schemeAlready']}</div>}
             </div>
             <div className='selectionArea' >
                 <input type='button' onClick={() => { props.drillDownData(props.scheme) }} className='goButton' value='GO' />
@@ -76,10 +73,12 @@ function FilterArea(props) {
                     setSelected={props.setTimePeriod}
                     setShowMenu={props.setShowMenu}
                     showMenu={props.showMenu}
-                    // schemeArr={props.schemeArr}
                 />
+                {props.error && props.error['timePeriod'] != undefined && <div className='errorMsg'>{props.error['timePeriod']}</div>}
             </div>
             <button className='applyButton' onClick={() => props.matrixData(props.timePeriod && props.timePeriod.value)}>Apply</button>
+            {props.error && props.error['2Schemes'] != undefined && <div className='errorMsg'>{props.error['2Schemes']}</div>}
+            {props.error && props.error['15schemes'] != undefined && <div className='errorMsg'>{props.error['15schemes']}</div>}
         </div>
     )
 }
